@@ -252,6 +252,7 @@ sub sanity {
     _die "'$repo' ends with a '/'"  if $repo =~ m(/$);
     _die "'$repo' contains '..'"    if $repo =~ $REPONAME_PATT and $repo =~ m(\.\.);
     _die "'$repo' contains '.git/'" if $repo =~ $REPONAME_PATT and $repo =~ m(\.git/);
+    _die "'$repo' should not end with '.git'" if $repo =~ m(\.git$);
 }
 
 sub repo_missing {
